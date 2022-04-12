@@ -1,0 +1,45 @@
+Puthon Solution 0:
+
+def is_anagram(s1, s2):
+	if len(s1) != len(s2):
+		return False
+	#Defining dictionary
+	frequency_1 = {}
+	frequency_2 = {}
+
+	for char in s1:
+		if char in frequency_1:
+			frequency_1[char] +=1
+		else : 
+			frequency_1[char] = 1
+
+	for char in s2:
+		if char in frequency_2:
+			frequency_2[char] +=1
+		else : 
+			frequency_2[char] = 1 
+
+	# print(frequency_1)
+	# print(frequency_2)
+
+	for key in frequency_1:
+		if key not in frequency_2 or frequency_1[key] != frequency_2[key]:
+			return False	
+	return True
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Puthon Solution 1:
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return sorted(s) == sorted(t)      
+    
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------  
+
+#Puthon Solution 2:
+
+from collection import Counter
+class Solution:
+     def isAnagram(self, s: str, t: str) -> bool:
+         return Counter(s) == Counter(t)    
